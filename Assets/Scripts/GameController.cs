@@ -1,15 +1,19 @@
 ﻿using UnityEngine;
 
-public class StrikingBall : MonoBehaviour
+public class GameController : MonoBehaviour
 {
     [Header("Setup:")]
     [SerializeField] private GameObject _cue;
     [SerializeField] private GameObject _whiteBall;
+    [SerializeField] private BallsManager _ballsManager;
 
     private void OnMouseDown()
     {
-        PositionCue();
-        _cue.SetActive(true);
+        if (_ballsManager.CheckIfBallsAreStill())
+        {
+            PositionCue();
+            _cue.SetActive(true);
+        }
     }
 
     private void OnMouseUp()

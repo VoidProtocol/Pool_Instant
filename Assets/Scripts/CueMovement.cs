@@ -13,6 +13,11 @@ public class CueMovement : MonoBehaviour
         _cueRigidbody = GetComponent<Rigidbody>();
     }
 
+    private void OnCollisionEnter(Collision collision)
+    {
+        Invoke("DisableCueAfterHit", 0.1f);
+    }
+
     private void FixedUpdate()
     {
         Vector3 rotatedVector = Quaternion.AngleAxis(transform.eulerAngles.y, Vector3.up) * Vector3.forward;
@@ -22,4 +27,9 @@ public class CueMovement : MonoBehaviour
 
         _cueRigidbody.velocity = rotatedVector * Time.deltaTime * _forceModifier * _force;
     }
+
+    private void DisableCueAfterHit()
+    {
+        gameObject.SetActive(false);
+    }    
 }
