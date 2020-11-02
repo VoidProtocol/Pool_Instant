@@ -15,6 +15,8 @@ public class CueMovement : MonoBehaviour
 
     private void OnCollisionEnter(Collision collision)
     {
+        Score.SubstractScore = 1;
+        Score.UpdateScore();
         Invoke("DisableCueAfterHit", 0.1f);
     }
 

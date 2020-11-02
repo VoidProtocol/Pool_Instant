@@ -1,9 +1,12 @@
 ﻿using UnityEngine;
 
-public class DisableBalls : MonoBehaviour
+public class BallHole : MonoBehaviour
 {
     [Header("Setup:")]
     [SerializeField] private GameObject _ballPlaceSurface;
+
+    [Header("Config:")]
+    [SerializeField] private int _whiteBallScorePenalty;
 
     private void OnTriggerEnter(Collider collider)
     {
@@ -11,6 +14,8 @@ public class DisableBalls : MonoBehaviour
 
         if (collider.gameObject.CompareTag("WhiteBall"))
         {
+            Score.SubstractScore = _whiteBallScorePenalty;
+            Score.UpdateScore();
             _ballPlaceSurface.SetActive(true);
         }
     }
