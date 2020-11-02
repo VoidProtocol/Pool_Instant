@@ -9,7 +9,7 @@ public class GameController : MonoBehaviour
 
     private void OnMouseDown()
     {
-        if (_ballsManager.CheckIfBallsAreStill())
+        if (_whiteBall.activeSelf && _ballsManager.CheckIfBallsAreStill())
         {
             PositionCue();
             _cue.SetActive(true);

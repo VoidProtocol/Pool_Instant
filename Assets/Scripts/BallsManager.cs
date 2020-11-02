@@ -24,5 +24,5 @@ public class BallsManager : MonoBehaviour
         }
 
         return true;
-    }    
+    }
 }
