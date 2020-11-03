@@ -29,8 +29,8 @@ public class CueMovement : MonoBehaviour
     {
         Vector3 rotatedVector = Quaternion.AngleAxis(transform.eulerAngles.y, Vector3.up) * Vector3.forward;
 
-        _forceModifier = ((CursorPosition.GetCursorPosition.x - transform.position.x) * rotatedVector.x) + 
-            ((CursorPosition.GetCursorPosition.z - transform.position.z) * rotatedVector.z);
+        _forceModifier = ((TouchInput.GetTouchPosition.x - transform.position.x) * rotatedVector.x) + 
+            ((TouchInput.GetTouchPosition.z - transform.position.z) * rotatedVector.z);
 
         _cueRigidbody.velocity = rotatedVector * Time.deltaTime * _forceModifier * _force;
     }

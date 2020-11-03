@@ -2582,7 +2582,7 @@ BoxCollider:
   m_IsTrigger: 0
   m_Enabled: 1
   serializedVersion: 2
-  m_Size: {x: 1.0000001, y: 2.0000005, z: 1.0000005}
+  m_Size: {x: 1.5, y: 2.0000005, z: 1.5}
   m_Center: {x: 0.000000059604645, y: -0.8, z: -0.00000008940699}
 --- !u!4 &903346297
 Transform:
@@ -2610,7 +2610,7 @@ Rigidbody:
   serializedVersion: 2
   m_Mass: 1
   m_Drag: 0
-  m_AngularDrag: 0.05
+  m_AngularDrag: 0.5
   m_UseGravity: 0
   m_IsKinematic: 0
   m_Interpolate: 0
@@ -2629,7 +2629,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   _cueCameraView: {fileID: 932325725}
-  _force: 400
+  _force: 500
 --- !u!1001 &909870788
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -2741,7 +2741,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 1
+  m_IsActive: 0
 --- !u!224 &932325726
 RectTransform:
   m_ObjectHideFlags: 0
