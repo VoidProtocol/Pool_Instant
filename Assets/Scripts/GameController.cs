@@ -5,6 +5,7 @@ public class GameController : MonoBehaviour
     [Header("Setup:")]
     [SerializeField] private GameObject _cue;
     [SerializeField] private GameObject _whiteBall;
+    [SerializeField] private GameObject _cueCameraView;
     [SerializeField] private BallsManager _ballsManager;
 
     private void OnMouseDown()
@@ -13,12 +14,14 @@ public class GameController : MonoBehaviour
         {
             PositionCue();
             _cue.SetActive(true);
+            _cueCameraView.SetActive(true);
         }
     }
 
     private void OnMouseUp()
     {
         _cue.SetActive(false);
+        _cueCameraView.SetActive(false);
     }
 
     private void PositionCue()

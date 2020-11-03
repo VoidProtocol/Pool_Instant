@@ -2,6 +2,9 @@
 
 public class CueMovement : MonoBehaviour
 {
+    [Header("Setup:")]
+    [SerializeField] private GameObject _cueCameraView;
+
     [Header("Settings:")]
     [SerializeField] private float _force;
 
@@ -32,6 +35,7 @@ public class CueMovement : MonoBehaviour
 
     private void DisableCueAfterHit()
     {
+        _cueCameraView.SetActive(false);
         gameObject.SetActive(false);
     }    
 }
