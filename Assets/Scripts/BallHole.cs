@@ -7,7 +7,6 @@ public class BallHole : MonoBehaviour
     [SerializeField] private BallsManager _ballsManager;
     [SerializeField] private GameController _gameController;
 
-
     [Header("Config:")]
     [SerializeField] private int _whiteBallScorePenalty;
 

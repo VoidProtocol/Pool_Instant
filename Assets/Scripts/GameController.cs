@@ -24,6 +24,7 @@ public class GameController : MonoBehaviour
         _cueCameraView.SetActive(false);
     }
 
+    //Set cue position and rotation based on white ball position and cursor
     private void PositionCue()
     {
         float cueRotationAngle = Mathf.Atan2(CursorPosition.GetCursorPosition.z - _whiteBall.transform.position.z, 
@@ -33,6 +34,7 @@ public class GameController : MonoBehaviour
         _cue.transform.rotation = Quaternion.Euler(90.0f, 0.0f, cueRotationAngle);
     }
     
+    //Restart game, better performance than Unity native restart method
     public void Restart()
     {
         Score.ResetScore();

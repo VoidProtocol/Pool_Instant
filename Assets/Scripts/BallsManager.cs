@@ -21,6 +21,7 @@ public class BallsManager : MonoBehaviour
         PlaceBalls();
     }
 
+    //Place balls in a triangle shape
     public void PlaceBalls()
     {
         int xRows = 5;
