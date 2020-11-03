@@ -31,5 +31,12 @@ public class GameController : MonoBehaviour
 
         _cue.transform.position = new Vector3(CursorPosition.GetCursorPosition.x, _whiteBall.transform.position.y, CursorPosition.GetCursorPosition.z);
         _cue.transform.rotation = Quaternion.Euler(90.0f, 0.0f, cueRotationAngle);
-    }    
+    }
+    
+    public void Restart()
+    {
+        Score.ResetScore();
+        _ballsManager.PlaceBalls();
+        Score.UpdateScore();
+    }
 }

@@ -21,19 +21,6 @@ public class BallsManager : MonoBehaviour
         PlaceBalls();
     }
 
-    public bool CheckIfBallsAreStill()
-    {
-        foreach (GameObject ball in _balls)
-        {
-            if (!ball.GetComponent<Rigidbody>().IsSleeping())
-            {
-                return false;
-            }
-        }
-
-        return true;
-    }
-
     public void PlaceBalls()
     {
         int xRows = 5;
@@ -59,5 +46,31 @@ public class BallsManager : MonoBehaviour
             ballPos = new Vector3(-ballPos.x - _xDistance * 1.5f, ballPos.y, ballPos.z - _zDistance);
             zRows--;
         }
-    }    
+    }
+
+    public bool CheckIfBallsAreStill()
+    {
+        foreach (GameObject ball in _balls)
+        {
+            if (!ball.GetComponent<Rigidbody>().IsSleeping())
+            {
+                return false;
+            }
+        }
+
+        return true;
+    }
+
+    public bool CheckIfAllBallsDisabled()
+    {
+        foreach (GameObject ball in _balls)
+        {
+            if (ball.activeSelf && !ball.CompareTag("WhiteBall"))
+            {
+                return false;
+            }
+        }
+
+        return true;
+    }
 }

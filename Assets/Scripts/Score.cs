@@ -16,7 +16,6 @@ public class Score : MonoBehaviour
 
     public static void UpdateScore()
     {
-        Debug.Log(_score);
         _textMeshProComponent.text = _score.ToString();
     }
 
